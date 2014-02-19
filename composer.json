@@ -1,0 +1,21 @@
+{
+    "name": "isimmons/spud",
+    "description": "Simple Phar UpDate",
+    "authors": [
+        {
+            "name": "Ian Simmons",
+            "email": "isimmons33@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Isimmons\\Spud\\": "src/"
+        },
+        "files": ["helpers.php"]
+    },
+    "minimum-stability": "stable"
+}
