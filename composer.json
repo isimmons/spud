@@ -9,7 +9,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.1.*"
+        "illuminate/support": "4.1.*",
+        "herrera-io/json": "1.*",
+        "herrera-io/version": "1.*"
     },
     "autoload": {
         "psr-4": {
