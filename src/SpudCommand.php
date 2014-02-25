@@ -12,35 +12,27 @@ class SpudCommand extends SymfonyCommand {
 
     protected $progress;
     protected $disableUpdgrade;
+    protected $customName;
     protected $customDescription;
     protected static $manifestUri;
 
-    public function __construct($name = 'self-update', $description = null, $disable = false)
+    public function __construct($name = null, $description = null, $disable = false)
     {
-        $this->customSetup($name, $description);
+        $this->customName = $this->getCustomName($name);
+        $this->customDescription = $this->getCustomDescription($description);
         $this->disableUpgrade = $disable;
-        parent::__construct($this->customName);
+        parent::__construct();
     }
 
-    protected function customSetup($name, $description)
+    protected function getCustomName($name)
     {
-        if($name == '' || is_null($name))
-        {
-            $this->customName = 'self-update';
-        }
-        else
-        {
-            $this->customName = $name;
-        }
+        return ($name == '' || is_null($name)) ? 'self-update' : $name;
+    }
 
-        if($description == '' || is_null($description))
-        {
-            $this->customDescription = "Updates the console application to the latest version.";
-        }
-        else
-        {
-            $this->customDescription = $description;
-        }
+    protected function getCustomDescription($description)
+    {
+        return ($description == '' || is_null($description)) ?
+            'Updates the console application to the latest version.' : $description;
     }
 
     /**
@@ -50,7 +42,8 @@ class SpudCommand extends SymfonyCommand {
     */
     protected function configure()
     {
-        $this->setDescription($this->customDescription);
+        $this->setName($this->customName)
+            ->setDescription($this->customDescription);
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
