@@ -123,12 +123,8 @@ class SpudManager {
     }
 
     protected function setRunningFile()
-    {        
+    {
         $file = realpath($_SERVER['argv'][0]);
-
-        //temporary
-        $this->runningFile = 'C:/Users/lotus/projects/spudtest/sgd.phar';
-        return true;
 
         if(! is_file($file))
             throw new BadPharFileException('Unable to set the current phar file for update.');
