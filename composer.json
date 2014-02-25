@@ -15,7 +15,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Isimmons\\Spud\\": "src/"
+            "Isimmons\\Spud\\": "src/",
+            "Isimmons\\Spud\\Phar": "src/phar",
+            "Isimmons\\Spud\\Exceptions": "src/Exceptions"
         },
         "files": ["helpers.php"]
     },
