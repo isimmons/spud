@@ -21,11 +21,6 @@ class Updater {
         $this->runningFile = $runningFile;
     }
 
-    public function getNewVersion()
-    {
-        return '0.0.2';
-    }
-
     public function doUpdate()
     {
         $this->getNewFile();

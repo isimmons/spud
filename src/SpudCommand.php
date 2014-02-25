@@ -87,6 +87,8 @@ class SpudCommand extends SymfonyCommand {
         {
             $this->displayOutput("  <error>{$result}</error>");
         }
+
+        $this->displayOutput("  Running version {$this->getApplication()->getVersion()}");
     }
 
     protected function update($manifestUri, $progress, $output)

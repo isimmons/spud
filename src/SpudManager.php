@@ -64,7 +64,7 @@ class SpudManager {
 
         if($result)
         {
-            return "Successfully updated to v{$updater->getNewVersion()}";
+            return "Successfully updated to the latest version.";
         }
 
         return "Unable to update. Please submit an issue to the issue tracker @ https://github.com/isimmons/spud/issues";
